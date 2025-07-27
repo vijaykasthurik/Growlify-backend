@@ -1,14 +1,14 @@
 const express = require('express');
 const cors = require('cors');
-const connectDB = require('./config/db');
-const authRoutes = require('./routes/authRoutes');
-const plantRoutes = require('./routes/plantRoutes');
-const shopRoutes = require('./routes/shopRoutes');
+const connectDB = require('./backend/config/db');
+const authRoutes = require('./backend/routes/authRoutes');
+const plantRoutes = require('./backend/routes/plantRoutes');
+const shopRoutes = require('./backend/routes/shopRoutes');
 require('dotenv').config();
-require('./schedulers/cronJobs');
+require('./backend/schedulers/cronJobs');
 
 const nodemailer = require('nodemailer');
-const logger = require('./utils/logger'); // ✅ Import logger 
+const logger = require('./backend/utils/logger'); // ✅ Import logger 
 
 const app = express();
 const PORT = 5000;
